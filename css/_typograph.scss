@@ -1,0 +1,52 @@
+$white_color: white;
+$black_color: black;
+$purple_color: purple;
+$linear_color: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+$linear_color_C: linear-gradient(91.57deg, #C0B7E8 -1.02%, #8176AF 36.25%);
+$color_34: #343045;
+
+$transparent: transparent;
+$font_300: 300;
+$font_400: 400;
+$font_700: 700;
+
+$text_size_12px: 12px;
+$text_size_14px: 14px;
+$text_size_16px: 16px;
+$text_size_24px: 24px;
+$text_size_26px: 26px;
+$text_size_32px: 32px;
+$text_size_36px: 36px;
+$text_size_40px: 40px;
+$text_size_64px: 64px;
+
+$border_none: none;
+
+@mixin d_flex($align: center, $justify: center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin d_flex_gap($align: center, $justify: center, $gap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+  
+
+@mixin span_style($font_family, $font_weight, $font_size, $color){
+    font-family: $font_family;
+    font-weight: $font_weight;
+    font-size: $font_size;
+    color: $color;
+}
+
+@mixin flex_direction($direction: row, $align: center, $justify: center, $gap: 0px){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}

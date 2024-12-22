@@ -1,0 +1,863 @@
+@use 'typograph' as *;
+@use 'font' as *;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    background: radial-gradient(50% 2900.76% at 50% 53.89%, rgba(58, 52, 86, 0.95) 0%, #211E2E 100%);
+    padding: 50px 75px 50px 75px;    
+}
+
+header{
+    width: 100%;
+    @include flex_direction(row, center, space-between, 35px);
+
+    .logo{
+        width: auto;
+
+        & .logo_img_left{
+            @include d_flex_gap(center, start, 15px);
+            cursor: pointer;
+        }
+
+        & .logo_img_left img:nth-child(1){
+            width: 101px;
+            height: 102px;
+            @include d_flex;
+        }
+
+        & .logo_img_right{
+            display: none;
+        }
+
+        & .logo_img_right img{
+            display: none;
+        }
+    }
+
+    nav{
+        width: auto;
+        @include d_flex_gap(center, center, 30px);
+
+        & span {
+            @include span_style($font_montserrat, $font_700, $text_size_12px, $white_color);
+            transition: all 0.3s ease;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.2);  
+            }
+        }
+    }
+
+    .header_btn{
+        width: 30%;
+        @include d_flex_gap(center, center, 30px);
+
+
+        & button{
+            width: 100%;
+            height: 48px;
+            border-radius: 40px;
+        }
+
+        & button:nth-child(1){
+            background-color: $transparent;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+        }
+
+        & button:nth-child(2){
+            background: $linear_color;
+            border: $border_none;
+            cursor: pointer;
+        }
+
+        & button:nth-child(1) span{
+            @include span_style($font_montserrat, $font_700, $text_size_12px, $white_color);
+        }
+
+        & button:nth-child(2) span{
+            @include span_style($font_montserrat, $font_700, $text_size_12px, $black_color);
+        }
+    }
+
+}
+
+
+.intro{
+    @include flex_direction(column, center, center, 40px);
+    margin-top: 40px;
+
+    & .intro_header{
+        @include flex_direction(row,center,space-between,35px);
+    }
+
+    .intro_info{
+        width: 50%;
+        @include flex_direction(column, start, center, 36px);
+
+        & h1{
+            @include span_style($font_montserrat, $font_700, $text_size_40px, $white_color);
+        }
+
+        & p{
+            line-height: 25px;
+            @include span_style($font_montserrat, $font_400, $text_size_16px, $white_color);
+        }
+
+        & h1 > span {
+            @include span_style($font_montserrat, $font_700, $text_size_40px, $purple_color);
+        }
+
+        & button{
+            width: 214px;
+            height: 48px;
+            border-radius: 40px;
+            background: $linear_color;
+            border: $border_none;
+            cursor: pointer;
+
+            span{
+                @include span_style($font_montserrat, $font_700, $text_size_12px, $black_color)
+            }
+        }
+    }
+
+    .intro_img{
+        width: 50%;
+        img{
+            width: 100%;
+            height: 531px;
+            object-fit: contain;
+        }
+    }
+
+    .intro_contact_info{
+        width: 100%;
+        height: 167px;
+        border-radius: 90px;
+        padding: 49px 42px;
+        background: radial-gradient(50% 2900.76% at 50% 53.89%, rgba(58, 52, 86, 0.95) 0%, #211E2E 100%);
+        box-shadow: 0px 4px 4px 0px #C0B7E803;
+        @include flex_direction(row, center, space-between, 42px);
+
+        & .box{
+            @include flex_direction(row, center, center,_);
+        }
+
+        & .box img{
+            width: 70px;
+            height: 70px;
+        }
+
+        & .box_text span:nth-child(1){
+            @include span_style($font_montserrat, $font_700, $text_size_24px, $white_color);
+        }
+
+        & .box_text span:nth-child(2){
+            @include span_style($font_montserrat, $font_400, $text_size_14px, $white_color);
+        }
+
+        & .box_text span{
+            @include flex_direction(column, space-between, space-between, 10px);
+        }
+    }
+}
+
+
+.about{
+    width: 100%;
+    margin-top: 90px;
+    @include flex_direction(column, center, space-between, 69px);
+
+    .about_upper{
+        width: 100%;
+        .about_top{
+            width: 100%;
+            @include flex_direction(row, center, justify-content, 111px);
+            .about_intro{
+                @include flex_direction(column, start, start, _);
+        
+                span{
+                    @include span_style($font_montserrat, $font_700, $text_size_36px, $white_color);
+                }
+
+                .about_header{
+                    @include flex_direction(row, start, center, 30px);
+            
+                    img{
+                        width: 228px;
+                        height: 50px;
+                    }
+                    span{
+                        width: 100%;
+                        @include span_style($font_montserrat, $font_300, $text_size_36px, $white_color);
+                    }
+                }
+            }
+        
+            .about_text{
+                width: 50%;
+                height: 140px;
+                line-height: 25px;
+                @include d_flex(center, center);
+                span{
+                    @include span_style($font_montserrat, $font_400, $text_size_16px, $white_color );
+                    line-height: 20px;
+                }
+            }
+        }
+
+            
+    }
+
+    .about_below{
+        width: 100%;
+        @include flex_direction(row, center, center, 118px);
+
+        img{
+            width: 50%;
+            height: 557px;
+            object-fit: contain;
+        }
+
+        .about_below_text{
+            width: 50%;
+            @include flex_direction(column, start, center, 42px);
+
+            .about_below_intro{
+                @include flex_direction(column, start, center, 5px);
+            }
+
+            .about_below_intro_span{
+                @include span_style($font_montserrat, $font_700, $text_size_36px, $white_color);
+            }
+
+            .about_below_intro_span_2{
+                @include span_style($font_montserrat, $font_300, $text_size_36px, $white_color);
+            }
+
+            .about_below_intro_span_3{
+                width: 100%;
+                @include span_style($font_montserrat, $font_400, $text_size_16px, $white_color);
+                line-height: 20px;
+            }
+
+            button{
+                width: 214px;
+                height: 48px;
+                background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+                border-radius: 40px;
+                cursor: pointer;
+                border: none;
+
+                span{
+                    @include span_style($font_montserrat, $font_700, $text_size_12px, $black_color);
+                }
+            }
+        }
+    }
+}
+
+
+.cards{
+    width: 100%;
+    @include flex_direction(row, center, center, 11px);
+
+    .card{
+        width: 24%;
+        height: 511px;
+        @include flex_direction(column, center, center, 34px);
+        border-radius: 40px;
+        padding: 30px;
+        background: radial-gradient(50% 50% at 50% 50%, #433D60 0%, #211E2E 100%);
+
+        & span:nth-child(2){
+            @include span_style($font_montserrat, $font_700, $text_size_24px, $white_color);
+        }
+    
+        & span:nth-child(3){
+            @include span_style($font_montserrat, $font_400, $text_size_12px, $white_color);
+            line-height: 20px;
+        }
+
+        button{
+            width: 100%;
+            height: 48px;
+            border-radius: 40px;
+            background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+
+            span{
+                @include span_style($font_montserrat, $font_700, $text_size_12px, $black_color);
+            }
+        }
+    }
+
+    
+}
+
+.technologies{
+    width: 100%;
+    margin-top: 56px;
+    
+    & .tech_box{
+        width: 100%;
+        height: 163px;
+        border-radius: 60px;
+        @include flex_direction(column, center, center, 14px);
+        background-image: url('../assets/img/background_tech_img.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        & span:nth-child(1){
+            @include span_style($font_montserrat, $font_700, $text_size_16px, $white_color);
+        }
+
+        & span:nth-child(2){
+            @include span_style($font_montserrat, $font_300, $text_size_24px, $white_color);
+        }
+    }
+
+    .tech_logo{
+        margin-top: 40px;
+        width: 100%;
+        height: auto;
+        @include flex_direction(row, center, center, 56px);
+
+        & img{
+            width: 20%;
+            height: 202px;
+            object-fit: contain;
+        }
+    }
+
+}
+
+.roadmap_steps{
+    width: 100%;
+    @include flex_direction(column, center, center, 25px);
+
+    & .step_roadmap{
+        width: 100%;
+        @include flex_direction(row, center, center, 80px);
+
+        & .step{
+                width: 159px;
+                height: 159px;
+                @include d_flex;
+                outline: 20px solid #0D0D0D52;
+                border-radius: 50%;
+                background: linear-gradient(251.27deg, #C0B7E8 12.87%, #8176AF 89.33%);
+                span{
+                    @include span_style($font_montserrat, $font_700, $text_size_64px, $black_color);
+                }
+        }
+    }
+
+    .step_desc{
+        width: 85%;
+        @include flex_direction(row, center, center,30px);
+
+        .step_info{
+            text-align: center;
+            width: 25%;
+            @include span_style($font_montserrat, $font_700, $text_size_24px, $white_color);
+        }
+    }
+
+}
+
+
+.join{
+    width: 100%;
+    @include d_flex;
+
+& .join_container{
+    width: 80%;
+    padding: 90px 30px;
+    margin-top: 100px;
+    @include flex_direction(column, center, center, _);
+    border-radius: 100px;
+    background: radial-gradient(50% 50% at 50% 50%, #403A5F 0%, #211E2E 100%);
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+    & .join_info_hydra{
+        text-align: center;
+        display: block;
+        @include span_style($font_montserrat, $font_700, $text_size_36px, $white_color);
+    }
+
+    & .join_info_build{
+        text-align: center;
+        display: block;
+        @include span_style($font_montserrat, $font_300, $text_size_36px, $white_color);
+    }
+
+    .inputs {
+        width: 90%;
+        margin-top: 65px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        row-gap: 33px;
+        column-gap: 10px;
+    }
+
+    .inputs input {
+        padding: 10px;
+        height: 72px;
+        box-sizing: border-box;
+        border-radius: 40px;
+        border: 2px solid #FFFFFF;
+        background: transparent;
+    }
+
+    .inputs input:nth-child(5), input:nth-child(6) { 
+        grid-column: span 2;
+    }
+
+    .tell_us_input{
+        height: 210px !important;
+    }
+
+    .join_btn{
+        width: 100%;
+        @include d_flex;
+
+        button{
+            width: 20%;
+            height: 48px;
+            margin-top: 51px;
+            border-radius: 40px;
+            background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+
+            span{
+                @include span_style($font_montserrat, $font_700, $text_size_12px, $black_color);
+            }
+        }
+    }
+}
+
+    
+
+}
+
+
+@media screen and (max-width: 992px) {
+    .container {
+      padding: 30px;
+    }
+  
+    header {
+        width: 100%;
+        @include d_flex(center, space-between);
+    
+        & .logo {
+            width: 100%;
+            @include flex_direction(row, center, space-between, _);
+    
+            & .logo_img_left {
+                @include d_flex_gap(center, center, 15px);
+                cursor: pointer;
+    
+                & img:nth-child(1) {
+                    width: 69px;
+                    height: 60px;
+                    @include d_flex;
+                }
+    
+                & img:nth-child(2) {
+                    width: 46px;
+                    height: 28px;
+                    @include d_flex;
+                }
+            }
+    
+            & .logo_img_right {
+                display: inline;
+    
+                img {
+                    display: inline;
+                    width: 33px;
+                    height: 26px;
+                }
+            }
+        }
+    
+        nav {
+            display: none;
+    
+            span {
+                display: none;
+            }
+        }
+    
+        .header_btn {
+            display: none;
+    
+            button {
+                display: none;
+    
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+
+    .intro{
+        width: 100%;
+        height: auto;
+        @include d_flex;
+
+        .intro_header{
+            width: 100%;
+            @include flex_direction(column, center, center,30px);
+
+            & .intro_info {
+                width: 90%;
+                @include d_flex(center, center);
+
+                p {
+                  display: none;
+                }
+
+                h1{
+                    text-align: center;
+                    @include span_style($font_montserrat, $font_700, $text_size_24px, $white_color);
+
+                    & span{
+                        @include span_style($font_montserrat, $font_700, $text_size_32px, $purple_color);
+                    }
+                }
+
+                button{
+                    width: 100%;
+                    height: 52px;
+                    font-size: 14px;
+                }
+            
+                order: 1;
+            }
+
+            & .intro_img{
+                width: 100%;
+                order: 0;
+                
+                & img{
+                    width: 100%;
+                    height: 300px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .intro_contact_info{
+            width: 100%;
+            height: 109px;
+            border-radius: 90px;
+
+            .box:nth-child(2), .box:nth-child(3){
+                display: none;
+            }
+
+            .box_text span:nth-child(1){
+                display: none;
+            }
+
+            .box_text span{
+                @include span_style($font_montserrat, $font_400, $text_size_14px, $white_color);
+                line-height: 27px;
+            }
+        }
+    }
+
+    .about{
+        .about_upper{
+            .about_top{
+                @include d_flex;
+                .about_intro{
+                    @include flex_direction(column, center, center, 10px);
+                    &:nth-child(1) span{
+                        text-align: center;
+                        @include span_style($font_montserrat, $font_700, $text_size_26px, $white_color);
+                    }
+
+                    .about_header img{
+                        display: none;
+                    }
+
+                    .about_header span{
+                        text-align: center;
+                        @include span_style($font_montserrat, $font_300, $text_size_26px, $white_color);
+                    }
+                }
+                
+    
+                .about_text{
+                    display: none;
+                }
+    
+                .about_text span{
+                    display: none;
+                }
+            }
+        }
+
+        .about_below{
+            @include flex_direction(column, center, center, 51px);
+
+            & img{
+                width: 100%;
+                height: 358px;
+            }
+    
+            .about_below_text{
+                .about_below_intro{
+                    display: none;
+                }
+
+                .about_below_intro span{
+                    display: none;
+                }
+
+                .about_below_intro_span_3{
+                    width: 100%;
+                    @include span_style($font_montserrat, $font_400, $text_size_12px, $white_color);
+                }
+
+                .about_btn{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        
+    }
+
+    .cards{
+        .card:nth-child(2), .card:nth-child(3), .card:nth-child(4){
+            display: none;
+        }
+
+        .card:nth-child(1){
+            width: 100%;
+        }
+
+        .card:nth-child(1) img{
+            border: 15px solid #0E0E0E52;
+            border-radius: 50%;
+        }
+    }
+
+    .technologies{
+        width: 100%;
+        @include flex_direction(column, center, center, 20px);
+        
+        .tech_box{
+            width: 100%;
+            height: 163px;
+            border-radius: 60px;
+            background-image: url('../assets/img/background_tech_img.png');
+            background-size: cover;
+            @include flex_direction(column, center, center, 14px);
+            & span:nth-child(1){
+                @include span_style($font_montserrat, $font_700, $text_size_16px, $white_color);
+            }
+    
+            & span:nth-child(2){
+                @include span_style($font_montserrat, $font_300, $text_size_24px, $white_color);
+            }
+        }
+
+        .tech_logo{
+            width: 100%;
+            height: auto;
+            @include flex_direction(row, center, center, 56px);
+        }
+
+        .tech_logo img:nth-child(4){
+            width: 220px;
+            height: 220px;
+        }
+
+        .tech_logo img:nth-child(1), .tech_logo img:nth-child(2), .tech_logo img:nth-child(3){
+            display: none;
+        }
+        
+
+    }
+
+    .roadmap_steps{
+
+        @include flex_direction(column, center, center, 25px);
+
+        .step_roadmap{
+            & .step:nth-child(2), .step:nth-child(3), .step:nth-child(4){
+                display: none;
+            }
+    
+            & .step:nth-child(1){
+                width: 159px;
+                height: 159px;
+                @include d_flex;
+                outline: 20px solid #0D0D0D52;
+                border-radius: 50%;
+                background: linear-gradient(251.27deg, #C0B7E8 12.87%, #8176AF 89.33%);
+            }
+    
+            & .step:nth-child(1) span{
+                @include span_style($font_montserrat, $font_700, $text_size_64px, $color_34);
+            }
+        }
+
+        .step_desc{
+            width: 100%;
+            margin-top: 10px;
+            & .step_info:nth-child(1){
+                width: 100%;
+                @include span_style($font_montserrat, $font_700, $text_size_24px, $white_color);
+            }
+            & .step_info:nth-child(2),.step_info:nth-child(3),.step_info:nth-child(4){
+                display: none;
+            }
+        }
+        
+
+    }
+
+    .join{
+        .join_container{
+            width: 100%;
+            height: auto;
+            @include flex_direction(column, center, center, 40px);
+            border-radius: 40px;
+            background: radial-gradient(50% 50% at 50% 50%, #403A5F 0%, #211E2E 100%);
+            padding: 45px 21px;
+
+            margin-top: 50px;
+
+            .join_info_hydra{
+                @include span_style($font_montserrat, $font_700, $text_size_24px, $white_color);
+            }
+
+            .join_info_build{
+                text-align: center;
+                @include span_style($font_montserrat, $font_300, $text_size_24px, $white_color);
+            }
+
+            & .inputs{
+                width: 100%;
+                margin-top: 30px;
+                @include flex_direction(column, center, center, 22px);
+
+                input{
+                    width: 100%;
+                    height: 53px;
+                    border: 2px solid #FFFFFF;
+                    padding: 18px 29px;
+                    border-radius: 40px;
+                    background: transparent;
+                }
+        
+                input::placeholder{
+                    @include span_style($font_montserrat, $font_400, $text_size_14px, $white_color);
+                }
+
+                .tell_us_input{
+                    height: 219px;
+                }
+
+                & .join_btn{
+                    width: 100%;
+                    button{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+
+    footer{
+        margin-top: 50px;
+        @include flex_direction(column, center, center, 90px);
+        
+        & .footer_upper{
+            width: 100%;
+            & .footer_img{
+                width: 100%;
+                @include d_flex(center, center);
+
+                img{
+                    width: 50%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+
+            & .footer_info_1{
+                display: none;
+            }
+
+            & .footer_info_2{
+                display: none;
+            }
+
+            & .footer_socialize{
+                width: 100%;
+
+                & .footer_intro{
+                    display: block;
+                    text-align: center;
+                    margin-top: 56px;   
+                    @include span_style($font_montserrat, $font_700, $text_size_16px, $white_color);
+                }
+
+                & .footer_images{
+                    width: 100%;
+                    @include flex_direction(row, center, center, 10px);
+                    margin-top: 29px;
+
+                    img{
+                        width: 100%;
+                    }
+                }
+
+                button{
+                    width: 100%;
+                    height: 55px;
+                    margin-top: 47px;
+                    border-radius: 40px;
+                    cursor: pointer;
+                    background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+
+                    & span{
+                        @include span_style($font_montserrat, $font_700, $text_size_14px, $black_color);
+                    }
+                }
+            }
+        }
+
+        & .footer_below{
+            width: 273px;
+            line-height: 25px;
+            @include d_flex;
+
+            span{
+                @include span_style($font_montserrat, $font_700, $text_size_14px, $white_color);
+            }
+        }
+    }
+}
+
