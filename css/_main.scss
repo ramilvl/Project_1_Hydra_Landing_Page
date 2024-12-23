@@ -108,16 +108,18 @@ header{
 
         & h1{
             @include span_style($font_montserrat, $font_700, $text_size_40px, $white_color);
+            span {
+                background: linear-gradient(91.57deg, #C0B7E8 -1.02%, #8176AF 36.25%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                @include span_style($font_montserrat, $font_700, $text_size_40px, _);
+            }
         }
 
         & p{
             line-height: 25px;
             @include span_style($font_montserrat, $font_400, $text_size_16px, $white_color);
-        }
-
-        & h1 > span {
-            @include span_style($font_montserrat, $font_700, $text_size_40px, $purple_color);
-        }
+        }        
 
         .intro_btn_design{
             @include d_flex;
@@ -664,6 +666,10 @@ footer{
                     height: 52px;
                     font-size: 14px;
                 }
+
+                .intro_btn_design img{
+                    display: none;
+                }
             
                 order: 1;
             }
@@ -685,11 +691,15 @@ footer{
             height: 109px;
             border-radius: 90px;
 
-            .box:nth-child(2), .box:nth-child(3){
+            .box:nth-child(3), .box:nth-child(5){
                 display: none;
             }
 
             .box_text span:nth-child(1){
+                display: none;
+            }
+
+            .vertical_line{
                 display: none;
             }
 
@@ -733,11 +743,14 @@ footer{
         }
 
         .about_below{
-            @include flex_direction(column, center, center, 51px);
+            @include flex_direction(column, center, center, 45px);
 
-            & img{
-                width: 100%;
-                height: 358px;
+            .about_below_img{
+                height: auto;
+                & img{
+                    width: 100%;
+                    height: auto;
+                }
             }
     
             .about_below_text{
@@ -782,7 +795,7 @@ footer{
 
     .technologies{
         width: 100%;
-        @include flex_direction(column, center, center, 20px);
+        @include flex_direction(column, center, center, 10px);
         
         .tech_box{
             width: 100%;
@@ -798,6 +811,10 @@ footer{
             & span:nth-child(2){
                 @include span_style($font_montserrat, $font_300, $text_size_24px, $white_color);
             }
+        }
+
+        & .below_icon{
+            display: none;
         }
 
         .tech_logo{
@@ -826,32 +843,30 @@ footer{
             & .step:nth-child(2), .step:nth-child(3), .step:nth-child(4){
                 display: none;
             }
-    
+
             & .step:nth-child(1){
+                @include flex_direction(column, center, center, _);
+            }
+    
+            & .step:nth-child(1) span{
                 width: 159px;
                 height: 159px;
                 @include d_flex;
                 outline: 20px solid #0D0D0D52;
                 border-radius: 50%;
                 background: linear-gradient(251.27deg, #C0B7E8 12.87%, #8176AF 89.33%);
-            }
-    
-            & .step:nth-child(1) span{
                 @include span_style($font_montserrat, $font_700, $text_size_64px, $color_34);
             }
-        }
 
-        .step_desc{
-            width: 100%;
-            margin-top: 10px;
             & .step_info:nth-child(1){
                 width: 100%;
                 @include span_style($font_montserrat, $font_700, $text_size_24px, $white_color);
             }
-            & .step_info:nth-child(2),.step_info:nth-child(3),.step_info:nth-child(4){
-                display: none;
-            }
         }
+
+            
+            
+        
         
 
     }
@@ -898,11 +913,12 @@ footer{
                     height: 219px;
                 }
 
-                & .join_btn{
+            }
+
+            & .join_btn{
+                width: 60%;
+                button{
                     width: 100%;
-                    button{
-                        width: 100%;
-                    }
                 }
             }
         }
@@ -926,6 +942,10 @@ footer{
                     width: 100%;
                     object-fit: cover;
                 }
+            }
+
+            & .vertical_line_white{
+                display: none;
             }
 
             & .footer_info_1{
@@ -985,6 +1005,7 @@ footer{
             @include d_flex;
 
             span{
+                text-align: center;
                 @include span_style($font_montserrat, $font_700, $text_size_14px, $white_color);
             }
         }
