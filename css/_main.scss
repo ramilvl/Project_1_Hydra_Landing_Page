@@ -16,10 +16,10 @@
 
 header{
     width: 100%;
-    @include flex_direction(row, center, space-between, 35px);
+    @include flex_direction(row, center, space-between, 40px);
 
     .logo{
-        width: auto;
+        width: 80%;
 
         & .logo_img_left{
             @include d_flex_gap(center, start, 15px);
@@ -42,8 +42,8 @@ header{
     }
 
     nav{
-        width: auto;
-        @include d_flex_gap(center, center, 30px);
+        width: 100%;
+        @include d_flex_gap(center, center, 20px);
 
         & span {
             @include span_style($font_montserrat, $font_700, $text_size_12px, $white_color);
@@ -59,7 +59,7 @@ header{
     }
 
     .header_btn{
-        width: 30%;
+        width: 100%;
         @include d_flex_gap(center, center, 30px);
 
 
@@ -98,11 +98,12 @@ header{
     margin-top: 40px;
 
     & .intro_header{
-        @include flex_direction(row,center,space-between,35px);
+        width: 100%;
+        @include flex_direction(row,center,space-between, _);
     }
 
     .intro_info{
-        width: 50%;
+        width: 35%;
         @include flex_direction(column, start, center, 36px);
 
         & h1{
@@ -118,22 +119,32 @@ header{
             @include span_style($font_montserrat, $font_700, $text_size_40px, $purple_color);
         }
 
-        & button{
-            width: 214px;
-            height: 48px;
-            border-radius: 40px;
-            background: $linear_color;
-            border: $border_none;
-            cursor: pointer;
+        .intro_btn_design{
+            @include d_flex;
+            img{
+                width: 100px;
+                height: 100px;
+            }
 
-            span{
-                @include span_style($font_montserrat, $font_700, $text_size_12px, $black_color)
+            & button{
+                width: 214px;
+                height: 48px;
+                border-radius: 40px;
+                background: $linear_color;
+                border: $border_none;
+                cursor: pointer;
+    
+                span{
+                    @include span_style($font_montserrat, $font_700, $text_size_12px, $black_color)
+                }
             }
         }
+
+        
     }
 
     .intro_img{
-        width: 50%;
+        width: 40%;
         img{
             width: 100%;
             height: 531px;
@@ -151,12 +162,18 @@ header{
         @include flex_direction(row, center, space-between, 42px);
 
         & .box{
-            @include flex_direction(row, center, center,_);
+            @include flex_direction(row, center, center,10px);
         }
 
         & .box img{
             width: 70px;
             height: 70px;
+        }
+
+        .vertical_line{
+            width: 1px;
+            height: 100px;
+            background-color: #C0B7E854;
         }
 
         & .box_text span:nth-child(1){
@@ -167,7 +184,7 @@ header{
             @include span_style($font_montserrat, $font_400, $text_size_14px, $white_color);
         }
 
-        & .box_text span{
+        & .box_text{
             @include flex_direction(column, space-between, space-between, 10px);
         }
     }
@@ -192,14 +209,14 @@ header{
                 }
 
                 .about_header{
-                    @include flex_direction(row, start, center, 30px);
+                    @include flex_direction(row, center, start, 30px);
             
                     img{
                         width: 228px;
-                        height: 50px;
+                        height: 90px;
                     }
                     span{
-                        width: 100%;
+                        width: auto;
                         @include span_style($font_montserrat, $font_300, $text_size_36px, $white_color);
                     }
                 }
@@ -207,8 +224,8 @@ header{
         
             .about_text{
                 width: 50%;
-                height: 140px;
-                line-height: 25px;
+                height: auto;
+                line-height: 40px;
                 @include d_flex(center, center);
                 span{
                     @include span_style($font_montserrat, $font_400, $text_size_16px, $white_color );
@@ -222,12 +239,15 @@ header{
 
     .about_below{
         width: 100%;
-        @include flex_direction(row, center, center, 118px);
+        @include flex_direction(row, center, space-between, _);
 
-        img{
-            width: 50%;
-            height: 557px;
-            object-fit: contain;
+        .about_below_img{
+            width: 40%;
+            img{
+                width: 100%;
+                height: 557px;
+                object-fit: contain;
+            }
         }
 
         .about_below_text{
@@ -249,7 +269,7 @@ header{
             .about_below_intro_span_3{
                 width: 100%;
                 @include span_style($font_montserrat, $font_400, $text_size_16px, $white_color);
-                line-height: 20px;
+                line-height: 30px;
             }
 
             button{
@@ -276,22 +296,35 @@ header{
     .card{
         width: 24%;
         height: 511px;
-        @include flex_direction(column, center, center, 34px);
+        @include flex_direction(column, center, space-between, _);
         border-radius: 40px;
-        padding: 30px;
+        padding: 50px 30px;
         background: radial-gradient(50% 50% at 50% 50%, #433D60 0%, #211E2E 100%);
+
+        img{
+            width: 50%;
+            outline: 15px solid rgba(29, 25, 51, 0.984);
+            border-radius: 50%;
+        }
+
+        .horizontal_line{
+            width: 150px;
+            height: 1px;
+            background-color: #C0B7E854;
+        }
+
 
         & span:nth-child(2){
             @include span_style($font_montserrat, $font_700, $text_size_24px, $white_color);
         }
     
-        & span:nth-child(3){
+        & span:nth-child(4){
             @include span_style($font_montserrat, $font_400, $text_size_12px, $white_color);
             line-height: 20px;
         }
 
         button{
-            width: 100%;
+            width: 65%;
             height: 48px;
             border-radius: 40px;
             background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
@@ -307,23 +340,34 @@ header{
 
 .technologies{
     width: 100%;
-    margin-top: 56px;
+    margin-top: 60px;
+    @include flex_direction(column, center, center,_);
     
     & .tech_box{
         width: 100%;
-        height: 163px;
-        border-radius: 60px;
+        height: 303px;
+        position: relative;
+        border-radius: 200px;
         @include flex_direction(column, center, center, 14px);
         background-image: url('../assets/img/background_tech_img.png');
         background-size: cover;
         background-repeat: no-repeat;
         & span:nth-child(1){
-            @include span_style($font_montserrat, $font_700, $text_size_16px, $white_color);
+            @include span_style($font_montserrat, $font_700, $text_size_36px, $white_color);
         }
 
         & span:nth-child(2){
-            @include span_style($font_montserrat, $font_300, $text_size_24px, $white_color);
+            @include span_style($font_montserrat, $font_300, $text_size_36px, $white_color);
         }
+    }
+
+    .below_icon{
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(267.61deg, #C0B7E8 -0.6%, #8176AF 98.31%);
+        border-radius: 50%;
+        position: absolute;
+        outline: 10px solid rgba(0, 0, 0, 0.212);
     }
 
     .tech_logo{
@@ -347,31 +391,35 @@ header{
 
     & .step_roadmap{
         width: 100%;
+        height: 100%;
         @include flex_direction(row, center, center, 80px);
 
         & .step{
+            width: 100%;
+            height: 100%;
+            @include flex_direction(column, center, start, 25px);
+        }
+
+        & .step span{
                 width: 159px;
                 height: 159px;
                 @include d_flex;
                 outline: 20px solid #0D0D0D52;
                 border-radius: 50%;
+                text-align: center;
                 background: linear-gradient(251.27deg, #C0B7E8 12.87%, #8176AF 89.33%);
-                span{
-                    @include span_style($font_montserrat, $font_700, $text_size_64px, $black_color);
-                }
+                @include span_style($font_montserrat, $font_700, $text_size_64px, $black_color);
         }
-    }
 
-    .step_desc{
-        width: 85%;
-        @include flex_direction(row, center, center,30px);
-
-        .step_info{
+        & .step_info{
+            width: 80%;
             text-align: center;
-            width: 25%;
             @include span_style($font_montserrat, $font_700, $text_size_24px, $white_color);
         }
     }
+
+
+        
 
 }
 
@@ -419,6 +467,11 @@ header{
         background: transparent;
     }
 
+    .inputs input::placeholder{
+        padding: 27px 42px;
+        @include span_style($font_montserrat, $font_400, $text_size_14px, $white_color);
+    }
+
     .inputs input:nth-child(5), input:nth-child(6) { 
         grid-column: span 2;
     }
@@ -456,8 +509,14 @@ footer{
 
     & .footer_upper{
         width: 100%;
-        padding: 40px;
-        @include flex_direction(row, center, space-between, 90px);
+        @include flex_direction(row, center, space-between, _);
+
+        .vertical_line_white{
+
+            width: 1px;
+            height: 150px;
+            border: 2px solid #C0B7E8;
+        }
 
         & .footer_img{
             width: 185px;
