@@ -459,24 +459,49 @@ header{
         row-gap: 33px;
         column-gap: 10px;
     }
-
+    
     .inputs input {
-        padding: 10px;
+        padding: 10px 20px;
         height: 72px;
         box-sizing: border-box;
         border-radius: 40px;
-        border: 2px solid #FFFFFF;
+        border: 2px solid rgba(255, 255, 255, 0.5);
         background: transparent;
+        color: #FFFFFF;
+        font-family: $font_montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        transition: border-color 0.3s ease, font-size 0.3s ease, background-color 0.3s ease;
     }
-
-    .inputs input::placeholder{
-        padding: 27px 42px;
-        @include span_style($font_montserrat, $font_400, $text_size_14px, $white_color);
+    
+    .inputs input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        @include span_style($font_montserrat, $font_400, $text_size_14px,_);
+        transition: color 0.3s ease;
     }
-
-    .inputs input:nth-child(5), input:nth-child(6) { 
+    
+    .inputs input:focus {
+        border-color: #FFFFFF;
+        background: rgba(255, 255, 255, 0.1);
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .inputs input:focus::placeholder {
+        color: transparent
+    }
+    
+    .inputs input:nth-child(5), 
+    .inputs input:nth-child(6) { 
         grid-column: span 2;
     }
+    
+    .inputs .tell_us_input {
+        height: 120px;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+    
 
     .tell_us_input{
         height: 210px !important;
@@ -664,6 +689,7 @@ footer{
                 button{
                     width: 100%;
                     height: 52px;
+                    padding: 10px;
                     font-size: 14px;
                 }
 
@@ -769,6 +795,7 @@ footer{
 
                 .about_btn{
                     width: 100%;
+                    padding: 10px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
